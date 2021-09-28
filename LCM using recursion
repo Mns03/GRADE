@@ -1,22 +1,36 @@
-#include<stdio.h>
-int gcd(int a, int b){
-    if (a==0){
-        return b;}
-    return gcd(b%a,a);
-}
-int lcm(int x, int y)
+#include <stdio.h>
+int Min(int n1, int n2)
 {
-	int z;
-	z=(x*y)/gcd(x,y);
-    return z;
+	return n2>=n2?n2:n1;
+}
+int rec(int n1,int n2,int x)
+{
+	if (n1==1||n1==1)
+		return n1*n2;
+	if (n1==n2)
+		return n1;
+	if (x<=Min(n1,n2)){
+		if(n1%x==0&&n2%x==0){
+			return x*rec(n1/x,n2/x,2);
+		}
+		else
+			return rec(n1,n2,x+1);
+	}
+	else
+		return n1*n2;
+}
+void lcm(int x, int y)
+{
+	int lc=rec(x,y,2);
+	printf("%d", lc);
 }
 int main(){
-	int a,b,lc;
-	printf("Input of first number\n");
+	int a,b;
+	printf("Input of first number ");
 	scanf("%d",&a);
-	printf("Input of second number\n");
+	printf("Input of first number ");
 	scanf("%d",&b);
-	lc=lcm(a,b);
-	printf("LCM of %d and %d is %d",a,b,lc);
-	
+	printf("Lcm of %d and %d is ",a,b);
+	lcm(a,b);
+	return 0;
 }
