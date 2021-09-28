@@ -1,0 +1,21 @@
+#include<stdio.h>
+int gcd(int a, int b){
+    if (a==0){
+        return b;}
+    return gcd(b%a,a);
+}
+int lcm(int x, int y)
+{
+	int z;
+	z=(x*y)/gcd(x,y);
+    return z;
+}
+int main(){
+	printf("Enter any two numbers to see their LCM\n");
+	int a,b,lc;
+	scanf("%d",&a);
+	scanf("%d",&b);
+	lc=lcm(a,b);
+	printf("LCM of the two numbers is %d",lc);
+	
+}
