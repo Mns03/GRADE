@@ -11,11 +11,12 @@ int lcm(int x, int y)
     return z;
 }
 int main(){
-	printf("Enter any two numbers to see their LCM\n");
 	int a,b,lc;
+	printf("Input of first number\n");
 	scanf("%d",&a);
+	printf("Input of second number\n");
 	scanf("%d",&b);
 	lc=lcm(a,b);
-	printf("LCM of the two numbers is %d",lc);
+	printf("LCM of %d and %d is %d",a,b,lc);
 	
 }
